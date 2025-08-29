@@ -395,7 +395,7 @@
     margin: 1rem;
     width: 400px;
     border-radius: 4px;
-    background-image: url('/images/pic5.jpg');
+    background-image: url('Images/pic5.jpg');
     background-size: contain;
     position: relative;
     color: #e8ca44;
@@ -404,7 +404,7 @@
 }
 
 .services__card:nth-child(2) {
-    background-image: url('/images/pic3.jpg');
+    background-image: url('Images/pic3.jpg');
 }
 
 .services h2 {
