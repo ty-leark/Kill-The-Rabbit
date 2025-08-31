@@ -306,7 +306,7 @@
 }
 
 /* Mobile  */
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1100px){
     .main__container {
         display: grid;
         grid-template-columns: auto;
@@ -395,7 +395,7 @@
     margin: 1rem;
     width: 400px;
     border-radius: 4px;
-    background-image: url('Images/rabbit.jpeg');
+    background-image: url('/images/rabbit.jpeg');
     background-size: contain;
     position: relative;
     color: #e8ca44;
@@ -404,7 +404,7 @@
 }
 
 .services__card:nth-child(2) {
-    background-image: url('Images/queen2.jpg');
+    background-image: url('/images/queen2.jpg');
 }
 
 .services h2 {
