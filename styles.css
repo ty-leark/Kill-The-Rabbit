@@ -126,6 +126,7 @@
         height: 50vh;
         z-index: -1;
         background: #131313;
+
     }
 
     .navbar__menu.active {
@@ -134,7 +135,7 @@
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 99;
-        height: 50vh;
+        height: 40vh;
         font-size: 1.6rem;
     }
 
@@ -306,7 +307,7 @@
 }
 
 /* Mobile  */
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1100px){
     .main__container {
         display: grid;
         grid-template-columns: auto;
@@ -335,6 +336,10 @@
         margin-top: 1rem;
         font-size: 1.5rem;
     }
+
+    .main__img--container img {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -355,6 +360,12 @@
     .main__btn {
         padding: 12px 36px;
         margin: 2.5rem 0;
+    }
+
+    .main__img--container img {
+        display: flex;
+        text-align: auto;
+        width: 50%;
     }
 }
 
@@ -395,7 +406,7 @@
     margin: 1rem;
     width: 400px;
     border-radius: 4px;
-    background-image: url('Images/pic2.jpg');
+    background-image: url('/images/pic2.jpg');
     background-size: contain;
     position: relative;
     color: #e8ca44;
@@ -404,7 +415,7 @@
 }
 
 .services__card:nth-child(2) {
-    background-image: url('Images/pic6.jpg');
+    background-image: url('/images/pic6.jpg');
 }
 
 .services h2 {
