@@ -415,7 +415,7 @@
 }
 
 .services__card:nth-child(2) {
-    background-image: url('/images/pic6.jpg');
+    background-image: url('images/pic6.jpg');
 }
 
 .services h2 {
