@@ -305,12 +305,6 @@
     text-align: center;
 }
 
-.main__img--container img {
-    text-align: center;
-    width: 600px;
-    height: 400px;
-}
-
 /* Mobile  */
 @media screen and (max-width: 1100px){
     .main__container {
