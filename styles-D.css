@@ -201,6 +201,7 @@
 
 /* Hero */
 .main {
+    height: 110vh;
     background-color: #141414;
 }
 
@@ -210,7 +211,6 @@
     align-items: center;
     margin: 0 375px;
     justify-self: center;
-    height: 110vh;
     background-color: #141414;
     z-index: 1;
     width: 100%;
