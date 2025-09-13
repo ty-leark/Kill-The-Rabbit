@@ -220,6 +220,7 @@
 
 .main__img--container {
     text-align: center;
+    align-items: center;
 }
 
     /* Mobile  */
