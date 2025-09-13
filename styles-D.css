@@ -215,7 +215,7 @@
     width: 100%;
     max-width: 1300px;
     padding: 0 50px;
-    height: 100vh;
+    height: 100%;
 }
 
 .main__img--container {
