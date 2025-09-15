@@ -206,7 +206,7 @@
 
 .main__container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
     margin: 0 375px;
     justify-self: center;
