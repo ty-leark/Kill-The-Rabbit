@@ -206,16 +206,26 @@
 
 .main__container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
-    margin: 0 375px;
     justify-self: center;
+    height: 90vh;
     background-color: #141414;
     z-index: 1;
     width: 100%;
+    padding: 50 100px;
     max-width: 1300px;
-    padding: 0 50px;
-    height: 100vh;
+}
+
+.main__container img{
+    display: grid;
+    align-items: center;
+    justify-self: center;
+    height: 90vh;
+    background-color: #141414;
+    z-index: 1;
+    width: 100%;
+    padding: 0 0px;
+    max-width: 1300px;
 }
 
 .main__img--container {
