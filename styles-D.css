@@ -214,10 +214,8 @@
     display: grid;
     align-items: center;
     justify-self: center;
-    height: 90vh;
     background-color: #141414;
     z-index: 1;
-    width: 100%;
     padding: 50 100px;
     max-width: 1300px;
 }
@@ -226,10 +224,8 @@
     display: grid;
     align-items: center;
     justify-self: center;
-    height: 90vh;
     background-color: #141414;
     z-index: 1;
-    width: 100%;
     padding: 0 0px;
     max-width: 1300px;
 }
