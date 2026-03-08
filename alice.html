@@ -13,7 +13,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar__container">
-            <a href="index.html" id="navbar__logo"><i class="fas fa-gem"></i>  Kill The Rabbit</a>
+            <a href="index.html" id="navbar__logo">  Kill The Rabbit</a>
             <div class="navbar__toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -32,7 +32,7 @@
                 </li>
                 <li class="navbar__item">
                     <a href="hatter.html" class="navbar__links">
-                        The Mad Hatter
+                        Mad Hatter
                     </a>
                 </li>
                 <li class="navbar__item">
@@ -54,36 +54,42 @@
         <div class="main__container">
             <div class="main__content">
                 <h1>Alice</h1>
-                <h2></h2>
                 <p>"Alice, why did it have to come to this?"<br>
                 -The Rabbit</p>
-                <button class="main__btn">
-                    <a href="down.html">Go In Hole</a>
-                </button>
+                <a href="down.html" class="main__btn">
+                    <span>Go In Hole</span>
+                </a>
             </div>
             <div class="main__img--container">
                 <img src="Images/Alice.1.jpeg" alt="pic" id="main__img">
+                <img src="Images/starz.webp" alt="overlay" class="overlay__img">
             </div>
         </div>
     </div>
 
     <!-- Services Section -->
-     <div class="services">
+    <div class="services">
         <h1>Close Friends—Polar Enemies</h1>
         <div class="services__container">
             <div class="services__card">
                 <h2>One Last Exchange</h2>
                 <p>A Cutting Memory</p>
-                <button>Uncover Trauma</button>
+                <a href="diary.html">
+                    <button class="main__btns">Uncover Trauma</button>
+                </a>
             </div>
             <div class="services__card">
                 <h2>An Old Friend</h2>
                 <p>Questions Unanswered</p>
-                <button>Revisit</button>
+                <a href="mailbox.html">
+                    <button class="main__btns">Voice Mailbox</button>
+                </a>
             </div>
         </div>
-     </div>
-
+    </div>
+    <script type="text/javascript">
+        window.resizeTo(screen.width, screen.height);
+    </script>
     <script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kill The Rabbit</title>
+    <link rel="stylesheet" href="styles-diary.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Kumbh+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="preload" href="Jo_wrote_a_lovesong.woff2" as="font" type="font/woff2" crossorigin>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo"> Kill The Rabbit</a>
+            <ul class="navbar__menu">
+                <li class="navbar__btn">
+                    <a href="alice.html" class="button">
+                        Go Back
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Diary -->
+    <div class="main">
+        <div class="main__container">
+            <div class="wall-text"></div>
+            <div class="diary-frame">
+                <img id="diaryPage" src="Images/note1.png" alt="Diary Page">
+                <button class="nav-btn prev" onclick="prevPage()">Previous</button>
+                <button class="nav-btn next" onclick="nextPage()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+    const pages = [
+        "Images/note1.png",
+        "Images/note2.png",
+        "Images/note3.png",
+        "Images/note4.png",
+        "Images/note5.png"
+    ];
+
+    let currentPage = 0;
+
+    function showPage(index) {
+        document.getElementById("diaryPage").src = pages[index];
+    }
+
+    function nextPage() {
+        if (currentPage < pages.length - 1) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    }
+
+    function prevPage() {
+        if (currentPage > 0) {
+            currentPage--;
+            showPage(currentPage);
+        }
+    }
+    </script>
+    <script>
+    const wall = document.querySelector(".wall-text");
+    const text = "rabbi t";
+    const scribbleCount = 60; // number of repeated texts
+
+    for (let i = 0; i < scribbleCount; i++) {
+        const span = document.createElement("span");
+        span.innerText = text;
+
+        // Random position
+        span.style.top = Math.random() * 100 + "%";
+        span.style.left = Math.random() * 100 + "%";
+
+        span.style.setProperty('--rotation', `${Math.random() * 360}deg`);
+
+        // Random font size
+        span.style.fontSize = (Math.random() * 50 + 20) + "px";
+
+        // Random rotation
+        span.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+        // Random opacity for subtlety
+        span.style.opacity = Math.random() * 0.2 + 0.05;
+
+        wall.appendChild(span);
+    }
+    </script>
+    <script type="text/javascript">
+        window.resizeTo(screen.width, screen.height);
+    </script>
+</body>
+</html>
