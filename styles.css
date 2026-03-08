@@ -6,7 +6,7 @@
 }
 
 .navbar {
-    background: #131313;
+    background: #000000;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -43,10 +43,6 @@
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
-}
-
-.fa-gem {
-    margin-right: 0.5rem;
 }
 
 .navbar__menu {
@@ -86,11 +82,11 @@
     padding: 10px 20px;
     height: 100%;
     width: 100%;
-    border: none;
     outline: none; 
     border-radius: 4px;
     background: #e61c06;
     color: #fff;
+    border: none;
 }
 
 .button:hover {
@@ -99,7 +95,7 @@
 }
 
 .navbar__links:hover{
-    color: #cdb91c;
+    color: #dbd187;
     transition: all 0.3s ease;
 }
 
@@ -216,14 +212,14 @@
     z-index: 1;
     width: 100%;
     max-width: 1300px;
-    padding: 0 50px;
+    padding: 0 30px;
 }
 
 .main__content h1 {
     font-size: 4rem;
-    background-color: #e61c06;
+    background-color: #0e1b70;
     background-image: linear-gradient(to top,
-    #c27a0e 50%,
+    #c27a0e 20%,
     #ffee00 75%);
     background-size: 100%;
     -webkit-background-clip: text;
@@ -232,7 +228,94 @@
     -moz-text-fill-color: transparent;
 }
 
-.main__content h2 {
+.main__content p{
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-right: 20px;
+}
+
+.main__btn {
+    display: inline-block;
+    position: relative;
+    padding: 14px 32px;
+    border-radius: 4px;
+    background-color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 6rem;
+    border: 2px solid #ffffff;
+}
+
+.main__btn span {
+    position: relative;
+    color: #fff;
+    z-index: 2; /* keep text above the GIF */
+    font-size: 1rem;
+}
+
+/* Background GIF */
+.main__btn:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-image: url('Images/free.gif');
+    background-position: center;
+    background-size: 75%;
+    z-index: 1;   /* behind the text */
+    transition: all 0s ease;
+}
+
+/* Hover effect */
+.main__btn:hover {
+    color: #fff;
+}
+
+.main__btn:hover:after {
+    width: 100%;
+}
+
+.main__img--container {
+    position: relative;
+    display: inline-block;
+}
+
+#main__img {
+    display: block;
+    width: 100%;
+}
+
+.overlay__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.main__img--container:hover .overlay__img {
+    opacity: 0.4; /* faint level */
+}
+
+/* Services Section */
+.services {
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 80px;
+}
+
+.services h1 {
     font-size: 4rem;
     background-color: #0e1b70;
     background-image: linear-gradient(to top,
@@ -243,152 +326,9 @@
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-}
-
-.main__content p{
-    margin-top: 1rem;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #ffffff1e;
-}
-
-.main__btn {
-    font-size: 1rem;
-    background-image: linear-gradient(
-        to right,
-    #ffff1a 10%,
-    rgb(255, 225, 0) 15%, 
-    #ffc400fb 25%,
-    #dbbf1b 35%,
-    #e7bc14 45%,
-    #ffff00 75%,
-    #fbff04 89%
-    );
-    padding: 14px 32px;
-    border: none;
-    border-radius: 4px;
-    color: #fffefe;
-    margin-top: 2rem;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.35s;
-    outline: none;
-}
-
-.main__btn a {
-    position: relative;
-    z-index: 2;
-    color: #110e0e;
-    text-decoration: none;
-}
-
-.main__btn:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: #e9d631;
-    transition: all 0.35s;
-    border-radius: 4px;
-}
-
-.main__btn:hover {
-    color: #fff;
-}
-
-.main__btn:hover:after {
-    width: 100%;
-}
-
-.main__img--container {
-    text-align: center;
-}
-
-/* Mobile  */
-@media screen and (max-width: 1100px){
-    .main__container {
-        display: grid;
-        grid-template-columns: auto;
-        align-items: center;
-        justify-self: center;
-        width: 100%;
-        margin: 0 auto;
-        height: 90vh;
-    }
-
-    .main__content {
-        text-align: center;
-        margin-bottom: 4rem;
-    }
-
-    .main__content h1 {
-        font-size: 2.5rem;
-        margin-top: 2rem;
-    }
-
-    .main__content h2 {
-        font-size: 3rem;
-    }
-
-    .main__content p {
-        margin-top: 1rem;
-        font-size: 1.5rem;
-    }
-
-    .main__img--container img {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .main__content h1 {
-        font-size: 2rem;
-        margin-top: 3rem;
-    }
-
-    .main__content h2 {
-        font-size: 2rem;
-    }
-
-    .main__content p {
-        margin-top: 2rem;
-        font-size: 1.5rem;
-    }
-
-    .main__btn {
-        padding: 12px 36px;
-        margin: 2.5rem 0;
-    }
-
-    .main__img--container img {
-        display: flex;
-        text-align: auto;
-        width: 50%;
-    }
-}
-
-/* Services Section */
-.services {
-    background: #141414;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-}
-
-.services h1 {
-    background-color: #ff8177;
-    background-image: linear-gradient(to right, 
-    #800900 0%,
-    #871005 0%,
-    #f3ff0c 21%,
-    #ce7800 52%,
-    #c81c3b 78%, 
-    #cd6a00 100%);
     background-size: 100%;
     margin-bottom: 5rem;
+    margin-top: 5rem;
     font-size: 2.5rem;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -444,33 +384,13 @@
     cursor: pointer;
 }
 
+.main__btns a{
+    text-decoration: none;
+    color: #fff;
+}
+
 .services__card:hover {
     transform: scale(1.075);
     transition: 0.2s ease-in;
     cursor: pointer;
-}
-
-@media screen and (max-width: 960px) {
-    .services {
-        height: 1600px;
-    }
-
-    .services h1 {
-        font-size: 2rem;
-        margin-top: 17rem;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .services {
-        height: 1400px;
-    }
-    
-    .services h1 {
-        font-size: 1.2rem;
-    }
-
-    .services__card {
-        width: 300px;
-    }
 }
