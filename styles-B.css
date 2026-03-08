@@ -5,8 +5,15 @@
     font-family: 'Alice', sans-serif; 
 }
 
+@font-face {
+    font-family: "JoWroteALoveSong";
+    src: url("fonts/Jo_wrote_a_lovesong.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
 .navbar {
-    background: #131313;
+    background: #000000;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -43,10 +50,6 @@
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
-}
-
-.fa-gem {
-    margin-right: 0.5rem;
 }
 
 .navbar__menu {
@@ -215,28 +218,13 @@
     z-index: 1;
     width: 100%;
     max-width: 1300px;
-    padding: 0 50px;
+    padding: 0 30px;
 }
 
 .main__content h1 {
     font-size: 4rem;
+    font-family: "JoWroteALoveSong", sans-serif;
     background-color: #e61c06;
-    background-image: linear-gradient(to top,
-    #c27a0e 50%,
-    #ffee00 75%);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-}
-
-.main__content h2 {
-    font-size: 4rem;
-    background-color: #0e1b70;
-    background-image: linear-gradient(to top,
-    #c27a0e 50%,
-    #ffee00 75%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -245,40 +233,30 @@
 }
 
 .main__content p{
-    margin-top: 1rem;
-    font-size: 2rem;
+    margin-top: 2rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: #ffffff1e;
+    color: #ffffff;
 }
 
 .main__btn {
-    font-size: 1rem;
-    background-image: linear-gradient(
-        to right,
-    #ffff1a 10%,
-    rgb(255, 225, 0) 15%, 
-    #ffc400fb 25%,
-    #dbbf1b 35%,
-    #e7bc14 45%,
-    #ffff00 75%,
-    #fbff04 89%
-    );
-    padding: 14px 32px;
-    border: none;
-    border-radius: 4px;
-    color: #fffefe;
-    margin-top: 2rem;
-    cursor: pointer;
+    display: inline-block;
     position: relative;
-    transition: all 0.35s;
-    outline: none;
+    padding: 14px 32px;
+    border-radius: 4px;
+    background-color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 6rem;
+    border: 2px solid #ffffff;
 }
 
-.main__btn a {
+.main__btn span {
     position: relative;
-    z-index: 2;
-    color: #110e0e;
-    text-decoration: none;
+    color: #fff;
+    z-index: 2; /* keep text above the GIF */
+    font-size: 1rem;
 }
 
 .main__btn:after {
@@ -286,11 +264,14 @@
     content: '';
     top: 0;
     left: 0;
-    width: 0;
+    width: 100%;
     height: 100%;
-    background: #e9d631;
-    transition: all 0.35s;
-    border-radius: 4px;
+    background-image: url('Images/ra.png');
+    background-position: center;
+    background-size: 75%;
+    opacity: 0;
+    transition: opacity 0s ease;
+    border-radius: 2px;
 }
 
 .main__btn:hover {
@@ -299,10 +280,17 @@
 
 .main__btn:hover:after {
     width: 100%;
+    opacity: 1;
 }
 
 .main__img--container {
-    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+#main__img {
+    display: block;
+    width: 100%;
 }
 
 /* Mobile  */
@@ -370,25 +358,25 @@
 
 /* Services Section */
 .services {
-    background: #141414;
+    background: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 100%;
+    padding-bottom: 80px;
 }
 
 .services h1 {
-    background-color: #ff8177;
-    background-image: linear-gradient(to right, 
-    #800900 0%,
-    #871005 0%,
-    #f3ff0c 21%,
-    #ce7800 52%,
-    #c81c3b 78%, 
-    #cd6a00 100%);
-    background-size: 100%;
-    margin-bottom: 5rem;
+    font-family: "JoWroteALoveSong", sans-serif;
+    letter-spacing: 9px;
     font-size: 2.5rem;
+    margin: 5rem 0;
+    
+    /* Image background instead of gradient */
+    background-image: url('Images/wom.webp'); /* your image */
+    background-size: cover;
+    background-position: center;
+
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -414,7 +402,13 @@
 }
 
 .services__card:nth-child(2) {
-    background-image: url('Images/pic3.jpg');
+    background-image: 
+    linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(17, 17, 17, 0.6) 100%
+        ), 
+    url('Images/pic3.jpg');
 }
 
 .services h2 {
@@ -449,7 +443,12 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 960px) {
+.services__card a {
+    text-decoration: none;
+    color: #fff;
+}
+
+@media screen and (max-width: 1100px) {
     .services {
         height: 1600px;
     }

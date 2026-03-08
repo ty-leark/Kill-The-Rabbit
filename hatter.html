@@ -13,7 +13,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar__container">
-            <a href="index.html" id="navbar__logo"><i class="fas fa-gem"></i>  Kill The Rabbit</a>
+            <a href="index.html" id="navbar__logo">  Kill The Rabbit</a>
             <div class="navbar__toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -32,7 +32,7 @@
                 </li>
                 <li class="navbar__item">
                     <a href="hatter.html" class="navbar__links">
-                        The Mad Hatter
+                        Mad Hatter
                     </a>
                 </li>
                 <li class="navbar__item">
@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li class="navbar__btn">
-                    <a href="down.html" class="button">
+                    <a href="./down.html" class="button">
                         Go Down
                     </a>
                 </li>
@@ -53,12 +53,13 @@
     <div class="main">
         <div class="main__container">
             <div class="main__content">
-                <h1>THE</h1>
-                <h2>MAD HATTER</h2>
-                <p>A Dear Friend, Someone To Confide In When You Have No More Cards Up Your Sleeve</p>
-                <button class="main__btn">
-                    <a href="down.html">Go In Hole</a>
-                </button>
+                <h1>mad hatter</h1>
+                <p>Sanity’s a luxury I sold to the caterpillars… <br>
+                and darling, here in this twisted garden, the tea’s always cold, <br>
+                the clocks always broken, and only the madness keeps you alive!</p>
+                <a href="down.html" class="main__btn">
+                    <span>Go In Hole</span>
+                </a>
             </div>
             <div class="main__img--container">
                 <img src="Images/hatter.png" alt="pic" id="main__img">
@@ -67,22 +68,49 @@
     </div>
 
     <!-- Services Section -->
-     <div class="services">
-        <h1>Invoking Madness</h1>
+    <div class="services">
+        <h1>invoking madness</h1>
         <div class="services__container">
             <div class="services__card">
                 <h2>The Cheshire Cat</h2>
                 <p>Ambiguity</p>
-                <button>Contact</button>
+                <a href="contact.html">
+                    <button class="main__btns">Contact</button>
+                </a>
             </div>
             <div class="services__card">
                 <h2>The OysterCloud</h2>
                 <p>Raining Fish</p>
-                <button>Activate OysterCloud</button>
+                <a href="oystercloud.html">
+                    <button class="main__btns">Activate OysterCloud</button>
+                </a>
             </div>
         </div>
-     </div>
+    </div>
 
+    <script>
+const img = document.getElementById("main__img");
+
+const normal = "Images/hatter.png";
+const glitch = "Images/hatter_glitch.png";
+
+function glitchImage() {
+    img.classList.add("glitch");
+
+    img.src = glitch;
+
+    setTimeout(() => {
+        img.src = normal;
+        img.classList.remove("glitch");
+    }, 300); // how long the glitch shows
+}
+
+// trigger randomly
+setInterval(glitchImage, 3500);
+</script>
+    <script type="text/javascript">
+        window.resizeTo(screen.width, screen.height);
+    </script>
     <script src="app.js"></script>
 </body>
 </html>
