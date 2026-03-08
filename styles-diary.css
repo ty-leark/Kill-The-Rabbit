@@ -1,0 +1,190 @@
+@font-face {
+    font-family: "JoWroteALoveSong";
+    src: url("fonts/Jo_wrote_a_lovesong.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Alice', sans-serif; 
+}
+
+.navbar {
+    background: #000000;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navbar__logo {
+    background-color: #ff0000;
+    background-image: linear-gradient(to top,
+    #ff0844 0%,
+    #be0000 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+    margin-left: auto;
+}
+
+.navbar__btn {
+    padding-left: 20px;
+    width: 300px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    outline: none; 
+    border-radius: 4px;
+    background: #e61c06;
+    color: #fff;
+    border: none;
+}
+
+.button:hover {
+    background: #440000;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 960px) {
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    #navbar__logo {
+        padding-left: 25px;
+    }
+}
+
+/* Hero */
+.main {
+    background-color: #141414;
+    height: calc(100vh - 80px); /* full screen minus navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background "scribbles" container */
+.wall-text {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* clicks go through */
+    z-index: 1;           /* behind all content */
+    overflow: hidden;
+    background-color: #141414; /* dark background */
+}
+
+@keyframes floatScribble {
+    0% { transform: translate(0px, 0px) rotate(var(--rotation)); }
+    50% { transform: translate(5px, -5px) rotate(var(--rotation)); }
+    100% { transform: translate(0px, 0px) rotate(var(--rotation)); }
+}
+
+.wall-text span {
+    position: absolute;
+    color: #fff;
+    font-family: "JoWroteALoveSong", sans-serif;
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+    animation: floatScribble 6s ease-in-out infinite;
+}
+
+.main__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+}
+
+/* Full screen diary */
+.diary-frame {
+    position: relative;
+    width: 70%;           /* reduce width */
+    height: 90%;          /* reduce height */
+    overflow: hidden;
+    border-radius: 8px;     /* optional for nicer corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    z-index: 999;
+}
+
+/* Image inside the frame */
+.diary-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+}
+
+/* Corner Buttons */
+.nav-btn {
+    position: absolute;
+    bottom: 20px;
+    padding: 12px 24px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
