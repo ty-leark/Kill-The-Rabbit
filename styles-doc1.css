@@ -1,0 +1,96 @@
+/* ==========================================================
+   EVIDENCE DOC1 VIEWER — layout only
+   ========================================================== */
+
+body {
+    background: var(--bg);
+}
+
+.main {
+    background: radial-gradient(circle at center, var(--bg2) 0%, var(--bg) 100%);
+    min-height: calc(100vh - 80px);
+    width: 100%;
+    padding: 80px 20px 60px;
+    display: block;
+}
+
+.main__container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.doc-back {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    color: var(--redBright);
+    text-decoration: none;
+    font-family: Orbitron, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    background: transparent;
+    transition: 0.25s ease;
+}
+
+.doc-back:hover {
+    background: var(--red);
+    color: #000;
+    border-color: var(--redBright);
+}
+
+.main__img--container {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    padding: 14px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(177, 0, 26, 0.35);
+    border-radius: var(--radius);
+    box-shadow:
+        var(--shadow),
+        inset 0 0 60px rgba(0, 0, 0, 0.6);
+}
+
+#main__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.main__img--container:hover #main__img {
+    transform: scale(1.01);
+    filter: contrast(1.15);
+}
+
+.main__img--container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.03),
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 4px
+    );
+    opacity: 0.15;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    border-radius: var(--radius);
+}
+
+@media (max-width: 900px) {
+    .main {
+        padding: 60px 16px;
+    }
+}

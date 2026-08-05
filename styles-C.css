@@ -1,0 +1,264 @@
+/* ==========================================================
+   QUEEN — bureau layout (chrome in styles-shared.css)
+   ========================================================== */
+
+body {
+    background: var(--bg);
+}
+
+.main {
+    background: var(--bg2);
+    background-image:
+        radial-gradient(circle at top, rgba(177, 0, 26, 0.18), transparent 55%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    min-height: calc(100vh - 80px);
+}
+
+.main__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    position: relative;
+    min-height: calc(100vh - 80px);
+}
+
+.hearts {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(255, 59, 59, 0.35);
+    text-shadow: 0 0 12px rgba(177, 0, 26, 0.35);
+    animation: float 5s ease-in-out infinite;
+}
+
+.heart.green { color: rgba(82, 255, 137, 0.35); }
+.heart.blue { color: rgba(255, 204, 51, 0.35); }
+.heart.yellow { color: rgba(255, 204, 51, 0.45); }
+
+.heart:nth-child(1){top:15%;left:10%;font-size:2rem;}
+.heart:nth-child(2){top:40%;left:25%;font-size:3rem;}
+.heart:nth-child(3){top:65%;left:15%;font-size:2.5rem;}
+.heart:nth-child(4){top:20%;left:75%;font-size:4rem;}
+.heart:nth-child(5){top:55%;left:60%;font-size:2rem;}
+.heart:nth-child(6){top:80%;left:80%;font-size:3rem;}
+.heart:nth-child(7){top:35%;left:50%;font-size:2.5rem;}
+.heart:nth-child(8){top:70%;left:24%;font-size:3.5rem;}
+.heart:nth-child(9){top:20%;left:45%;font-size:3.5rem;}
+.heart:nth-child(10){top:2%;left:49%;font-size:3.5rem;}
+.heart:nth-child(11){top:32%;left:64%;font-size:3.5rem;}
+.heart:nth-child(12){top:70%;left:90%;font-size:3.5rem;}
+.heart:nth-child(13){top:48%;left:8%;font-size:2.2rem;}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.main__content {
+    position: relative;
+    z-index: 2;
+}
+
+.main__content h1 {
+    font-family: Orbitron, sans-serif;
+    font-size: 3.6rem;
+    letter-spacing: 3px;
+    color: var(--redBright);
+    text-shadow: 0 0 24px rgba(177, 0, 26, 0.35);
+}
+
+.queen-quote-glass {
+    margin-top: 1.5rem;
+    max-width: 36ch;
+    padding: 18px 20px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(12, 14, 20, 0.38);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.queen-quote-glass p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: none;
+}
+
+.main__content > p:not(.hero__eyebrow) {
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 34ch;
+}
+
+.main__btn {
+    display: inline-flex;
+    margin-top: 2.5rem;
+    padding: 12px 22px;
+    border-radius: 8px;
+    border: 1px solid var(--red);
+    background: transparent;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.main__btn span {
+    color: var(--redBright);
+    font-family: Orbitron, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.main__btn:hover {
+    background: var(--red);
+}
+
+.main__btn:hover span {
+    color: #000;
+}
+
+.main__img--container {
+    position: relative;
+    z-index: 2;
+}
+
+#main__img {
+    display: block;
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.services {
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px 100px;
+    border-top: 1px solid rgba(255, 0, 0, 0.15);
+}
+
+.services h1 {
+    font-family: Orbitron, sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 2rem;
+}
+
+.services__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.services__card {
+    margin: 1rem;
+    width: 360px;
+    max-width: 100%;
+    height: 480px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(177, 0, 26, 0.35);
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(5, 6, 10, 0.88) 100%),
+        url("Images/rabbit.jpeg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: var(--gold);
+    overflow: hidden;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.services__card:nth-child(2) {
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(5, 6, 10, 0.88) 100%),
+        url("Images/queen2.jpg");
+}
+
+.services__card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+}
+
+.services h2 {
+    position: absolute;
+    top: 320px;
+    left: 24px;
+    font-family: Orbitron, sans-serif;
+    font-size: 1.2rem;
+}
+
+.services__card p {
+    position: absolute;
+    top: 360px;
+    left: 24px;
+    color: var(--muted);
+}
+
+.services__card .services-link {
+    display: inline-flex;
+    padding: 10px 16px;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid var(--red);
+    background: transparent;
+    color: var(--redBright);
+    position: absolute;
+    top: 400px;
+    left: 24px;
+    font-family: Orbitron, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.services__card .services-link:hover {
+    background: var(--red);
+    color: #000;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .main__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .main__content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .main__content h1 {
+        font-size: 2.6rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .services__card {
+        width: 100%;
+        max-width: 340px;
+        height: 440px;
+    }
+}

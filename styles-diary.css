@@ -1,0 +1,185 @@
+/* ==========================================================
+   DIARY — layout only (chrome in styles-shared.css)
+   ========================================================== */
+
+@font-face {
+    font-family: "JoWroteALoveSong";
+    src: url("fonts/Jo_wrote_a_lovesong.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: var(--bg);
+    overflow: hidden;
+    height: 100vh;
+}
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+.main {
+    position: relative;
+    background: var(--bg2);
+    height: calc(100vh - 80px);
+    max-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px 16px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.page-back {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    color: var(--redBright);
+    text-decoration: none;
+    font-family: Orbitron, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.55);
+    transition: 0.25s ease;
+}
+
+.page-back:hover {
+    background: var(--red);
+    color: #000;
+    border-color: var(--redBright);
+}
+
+.wall-text {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+    background: var(--bg2);
+}
+
+@keyframes floatScribble {
+    0% { transform: translate(0px, 0px) rotate(var(--rotation)); }
+    50% { transform: translate(5px, -5px) rotate(var(--rotation)); }
+    100% { transform: translate(0px, 0px) rotate(var(--rotation)); }
+}
+
+.wall-text span {
+    position: absolute;
+    color: rgba(255, 204, 51, 0.7);
+    font-family: "JoWroteALoveSong", sans-serif;
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+    animation: floatScribble 6s ease-in-out infinite;
+}
+
+.main__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min(1200px, 100%);
+    height: 100%;
+    max-height: 100%;
+    z-index: 2;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.diary-frame {
+    position: relative;
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    height: calc(100% - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: var(--radius);
+    border: 1px solid rgba(177, 0, 26, 0.35);
+    box-shadow: var(--shadow);
+    z-index: 2;
+    transform: translateY(50px);
+}
+
+.diary-frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    background: #0c0e14;
+}
+
+.nav-btn {
+    position: absolute;
+    bottom: 16px;
+    padding: 8px 14px;
+    border: 1px solid var(--gold);
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--gold);
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: Orbitron, sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+    transition: 0.2s ease;
+}
+
+.nav-btn:hover {
+    background: var(--red);
+    color: #000;
+    border-color: var(--redBright);
+}
+
+.prev { left: 16px; }
+.next { right: 16px; }
+
+/* Keep trail panel compact so the diary can stay large */
+.main__container .trail-panel {
+    margin: 0;
+    width: 100%;
+    max-height: 140px;
+    overflow: auto;
+    flex-shrink: 0;
+    padding: 14px 16px;
+}
+
+@media (max-width: 900px) {
+    body.has-terminal {
+        overflow: hidden;
+        height: 100vh;
+        padding-bottom: 0;
+    }
+
+    .main {
+        height: calc(100vh - 80px - 45vh);
+        max-height: calc(100vh - 80px - 45vh);
+        padding: 8px 10px;
+    }
+
+    .diary-frame {
+        height: calc(100% - 120px);
+    }
+
+    .main__container .trail-panel {
+        max-height: 110px;
+        padding: 12px;
+    }
+}

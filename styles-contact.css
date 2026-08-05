@@ -1,0 +1,67 @@
+/* ==========================================================
+   MEMORIES / CONTACT STACK — layout only
+   ========================================================== */
+
+body {
+    background: var(--bg);
+    overflow-x: hidden;
+}
+
+.stack-container {
+    position: relative;
+    width: calc(100vw - 340px);
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    background: var(--bg);
+}
+
+.page-back {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    color: var(--redBright);
+    text-decoration: none;
+    font-family: Orbitron, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.55);
+    transition: 0.25s ease;
+}
+
+.page-back:hover {
+    background: var(--red);
+    color: #000;
+    border-color: var(--redBright);
+}
+
+.stack-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 900px) {
+    .stack-container {
+        width: 100vw;
+    }
+}
+
+.img1 { z-index: 1; opacity: 1; }
+.img2 { z-index: 2; opacity: 0.2; }
+.img3 { z-index: 3; opacity: 0.12; }
+.img4 {
+    z-index: 4;
+    opacity: 0.18;
+    mix-blend-mode: screen;
+    filter: hue-rotate(-10deg) saturate(1.1);
+}

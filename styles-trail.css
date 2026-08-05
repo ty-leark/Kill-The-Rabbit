@@ -1,0 +1,177 @@
+/* ==========================================================
+   CLUE TRAIL PANELS — BUREAU
+   Shared across memorial / mailbox / diary / queen / ???
+   ========================================================== */
+
+.trail-panel {
+    width: 100%;
+    max-width: 720px;
+    margin: 28px auto 0;
+    padding: 22px 24px;
+    background: var(--surface, rgba(12, 14, 20, 0.92));
+    border: 1px solid rgba(177, 0, 26, 0.45);
+    border-radius: var(--radius, 14px);
+    box-shadow: var(--shadow, 0 20px 60px rgba(0, 0, 0, 0.45));
+    color: var(--text, #ececec);
+    font-family: Inter, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.trail-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 2px;
+    background: linear-gradient(90deg, var(--red, #b1001a), var(--gold, #ffcc33), transparent);
+}
+
+.trail-kicker {
+    color: var(--redBright, #ff3b3b);
+    font-family: Orbitron, sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.trail-panel h3 {
+    font-family: Orbitron, sans-serif;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--gold, #ffcc33);
+    letter-spacing: 1px;
+}
+
+.trail-panel p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: rgba(236, 236, 236, 0.82);
+    margin-bottom: 12px;
+}
+
+.trail-panel[data-ready="false"] .trail-form,
+.trail-panel.is-solved .trail-form,
+.trail-panel.is-solved [data-trail-gate] {
+    display: none;
+}
+
+.trail-panel[data-ready="false"] [data-trail-blocked] {
+    display: block;
+}
+
+.trail-panel[data-ready="true"] [data-trail-blocked] {
+    display: none;
+}
+
+[data-trail-blocked] {
+    display: none;
+    padding: 10px 12px;
+    border: 1px dashed rgba(255, 59, 59, 0.35);
+    border-radius: 8px;
+    color: var(--muted, #8b8b8b);
+    font-size: 0.88rem;
+}
+
+.trail-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.trail-form input {
+    flex: 1 1 180px;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    background: rgba(0, 0, 0, 0.55);
+    color: var(--text, #ececec);
+    font-family: Orbitron, sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 8px;
+}
+
+.trail-form input:focus {
+    outline: none;
+    border-color: rgba(255, 204, 51, 0.7);
+    box-shadow: 0 0 0 1px rgba(255, 204, 51, 0.15);
+}
+
+.trail-form button {
+    padding: 10px 16px;
+    border: 1px solid var(--red, #b1001a);
+    background: transparent;
+    color: var(--redBright, #ff3b3b);
+    font-family: Orbitron, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.25s ease;
+}
+
+.trail-form button:hover {
+    background: var(--red, #b1001a);
+    color: #000;
+}
+
+.trail-feedback {
+    min-height: 1.2em;
+    margin-top: 10px;
+    font-size: 0.82rem;
+    color: var(--redBright, #ff3b3b);
+    font-family: Orbitron, sans-serif;
+    letter-spacing: 1px;
+}
+
+.trail-feedback.is-success {
+    color: var(--green, #52ff89);
+}
+
+.trail-reveal {
+    display: none;
+    animation: trailReveal 0.45s ease;
+}
+
+.trail-panel.is-solved .trail-reveal {
+    display: block;
+}
+
+.trail-reveal .next-clue {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-left: 3px solid var(--gold, #ffcc33);
+    background: rgba(255, 204, 51, 0.06);
+    color: rgba(255, 236, 180, 0.92);
+    font-size: 0.92rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.trail-reveal .next-clue strong {
+    color: var(--gold, #ffcc33);
+    letter-spacing: 0.12em;
+    font-family: Orbitron, sans-serif;
+}
+
+@keyframes trailReveal {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .trail-panel {
+        width: calc(100% - 24px);
+        margin-left: 12px;
+        margin-right: 12px;
+        padding: 18px;
+    }
+}

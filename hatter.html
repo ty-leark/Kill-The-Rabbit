@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kill The Rabbit — a Wonderland investigation. Dig through classified case files, recover evidence, and follow the cipher trail.">
+    <meta name="theme-color" content="#05060a">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2305060a'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-size='36' fill='%23ff3b3b'%3E?%3C/text%3E%3C/svg%3E">
+
+    <title>Kill The Rabbit — Hatter File</title>
+
+    <link rel="stylesheet" href="styles-shared.css">
+    <link rel="stylesheet" href="styles-B.css">
+    <link rel="stylesheet" href="styles-terminal.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body onload="updateLog()" class="hatter-page">
+
+<!-- BACKGROUND LAYERS -->
+<div class="bg-noise"></div>
+
+<!-- NAV -->
+    <nav class="navbar">
+        <div class="ticker">
+            <div class="ticker__content">⚠ RABBIT SIGHTING REPORTED NEAR THE EASTERN HEDGE MAZE • ⚠ QUEEN'S GUARDS DEPLOYED TO ALL MAJOR PATHWAYS • ⚠ WITNESSES CLAIM THE RABBIT WAS SEEN CONSULTING AN UNMARKED POCKET WATCH • ⚠ CHESHIRE CAT LOCATION UNKNOWN • ⚠ LEVEL 5 WONDERLAND ALERT REMAINS ACTIVE • ⚠ RABBIT STILL AT LARGE • ⚠ REPORT ALL SUSPICIOUS TEA PARTIES TO THE ROYAL INVESTIGATION BUREAU • ⚠ THE HUNT CONTINUES • ⚠ RABBIT SIGHTING REPORTED NEAR THE EASTERN HEDGE MAZE • ⚠ QUEEN'S GUARDS DEPLOYED TO ALL MAJOR PATHWAYS • ⚠ WITNESSES CLAIM THE RABBIT WAS SEEN CONSULTING AN UNMARKED POCKET WATCH • ⚠ CHESHIRE CAT LOCATION UNKNOWN • ⚠ LEVEL 5 WONDERLAND ALERT REMAINS ACTIVE • ⚠ RABBIT STILL AT LARGE • ⚠ REPORT ALL SUSPICIOUS TEA PARTIES TO THE ROYAL INVESTIGATION BUREAU • ⚠ THE HUNT CONTINUES • </div>
+        </div>
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">KILL THE RABBIT</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="index.html">THE RABBIT</a></li>
+                <li><a href="alice.html">ALICE</a></li>
+                <li><a href="hatter.html" class="active">HATTER</a></li>
+                <li><a href="queen.html">QUEEN</a></li>
+                <li><a href="question.html">???</a></li>
+                <li><a class="btn" href="down.html">GO DOWN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- HERO -->
+<header class="hero">
+
+    <div class="hero__prison" aria-hidden="true">
+        <img src="Images/prism.webp" alt="" class="hero__prison-img">
+        <div class="hero__prison-veil"></div>
+    </div>
+
+    <div class="hero__grid">
+
+        <div class="hero__content reveal">
+
+            <p class="hero__eyebrow">CONTAINMENT FILE: MAD HATTER</p>
+
+            <h1>HATTER</h1>
+
+            <p class="quote">
+                “Sanity is a borrowed concept. I returned mine late.”
+            </p>
+
+            <p class="desc">
+                Currently held in royal detention. Subject exhibits unstable temporal cognition,
+                fragmented speech loops, and recurring tea-party hallucination cycles.
+            </p>
+
+            <div class="actions">
+                <a class="cta" href="down.html">GO IN HOLE</a>
+                <a class="ghost" href="#archive">VIEW EVIDENCE</a>
+            </div>
+
+        </div>
+
+        <div class="hero__visual parallax reveal">
+            <div class="portrait-frame">
+                <div class="portrait-glow"></div>
+                <img
+                    src="Images/hatter.webp"
+                    class="primary"
+                    id="main__img"
+                    data-glitch="Images/hatter_glitch.webp"
+                    alt="The Mad Hatter"
+                    loading="lazy"
+                >
+                <div class="scan-lines"></div>
+                <div class="frame-corners"></div>
+            </div>
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ARCHIVE -->
+<section id="archive" class="section evidence">
+
+    <h2 class="section__title reveal">CASE FILES</h2>
+
+    <div class="archive-grid">
+
+        <article class="memory-card reveal">
+            <div class="memory-image">
+                <img src="Images/lab.webp" alt="Cheshire Contact case file">
+            </div>
+            <div class="memory-content">
+                <span class="memory-tag">FILE 01</span>
+                <h3>CHESHIRE CONTACT</h3>
+                <p>Appears before spatial collapse events.</p>
+                <a href="contact.html" class="card-button">CONTACT</a>
+            </div>
+        </article>
+
+        <article class="memory-card reveal">
+            <div class="memory-image">
+                <img src="Images/fall.webp" alt="Oystercloud Event case file">
+            </div>
+            <div class="memory-content">
+                <span class="memory-tag">FILE 02</span>
+                <h3>OYSTERCLOUD EVENT</h3>
+                <p>Atmospheric anomaly linked to tea logic experiments.</p>
+                <a href="oystercloud.html" class="card-button">ACTIVATE</a>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+<!-- SYSTEM JS -->
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kill The Rabbit — a Wonderland investigation. Dig through classified case files, recover evidence, and follow the cipher trail.">
+    <meta name="theme-color" content="#05060a">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2305060a'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-size='36' fill='%23ff3b3b'%3E?%3C/text%3E%3C/svg%3E">
+
+    <title>Muddy Memories | Kill The Rabbit</title>
+    <link rel="stylesheet" href="styles-shared.css">
+    <link rel="stylesheet" href="styles-memories.css">
+    <link rel="stylesheet" href="styles-terminal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body onload="updateLog()" data-category="queen">
+<!-- Navbar -->
+    <nav class="navbar">
+        <div class="ticker">
+            <div class="ticker__content">⚠ RABBIT SIGHTING REPORTED NEAR THE EASTERN HEDGE MAZE • ⚠ QUEEN'S GUARDS DEPLOYED TO ALL MAJOR PATHWAYS • ⚠ WITNESSES CLAIM THE RABBIT WAS SEEN CONSULTING AN UNMARKED POCKET WATCH • ⚠ CHESHIRE CAT LOCATION UNKNOWN • ⚠ LEVEL 5 WONDERLAND ALERT REMAINS ACTIVE • ⚠ RABBIT STILL AT LARGE • ⚠ REPORT ALL SUSPICIOUS TEA PARTIES TO THE ROYAL INVESTIGATION BUREAU • ⚠ THE HUNT CONTINUES • ⚠ RABBIT SIGHTING REPORTED NEAR THE EASTERN HEDGE MAZE • ⚠ QUEEN'S GUARDS DEPLOYED TO ALL MAJOR PATHWAYS • ⚠ WITNESSES CLAIM THE RABBIT WAS SEEN CONSULTING AN UNMARKED POCKET WATCH • ⚠ CHESHIRE CAT LOCATION UNKNOWN • ⚠ LEVEL 5 WONDERLAND ALERT REMAINS ACTIVE • ⚠ RABBIT STILL AT LARGE • ⚠ REPORT ALL SUSPICIOUS TEA PARTIES TO THE ROYAL INVESTIGATION BUREAU • ⚠ THE HUNT CONTINUES • </div>
+        </div>
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">KILL THE RABBIT</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="index.html">THE RABBIT</a></li>
+                <li><a href="alice.html">ALICE</a></li>
+                <li><a href="hatter.html">HATTER</a></li>
+                <li><a href="queen.html" class="active">QUEEN</a></li>
+                <li><a href="question.html">???</a></li>
+                <li><a class="btn" href="down.html">GO DOWN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="stack-container">
+        <a href="queen.html" class="page-back">← BACK</a>
+        <img src="Images/rabb.jpg" class="stack-img img1" alt="Muddy Memories rabbit">
+        <div class="haunt-stack" aria-hidden="true">
+            <img src="Images/flash.webp" class="haunt-img haunt-img--0" alt="">
+            <img src="Images/flash1.webp" class="haunt-img haunt-img--1" alt="">
+            <img src="Images/flash2.webp" class="haunt-img haunt-img--2" alt="">
+            <img src="Images/flash3.webp" class="haunt-img haunt-img--3" alt="">
+            <img src="Images/flash4.webp" class="haunt-img haunt-img--4" alt="">
+            <img src="Images/flash5.webp" class="haunt-img haunt-img--5" alt="">
+            <img src="Images/flash6.webp" class="haunt-img haunt-img--6" alt="">
+            <img src="Images/flash7.webp" class="haunt-img haunt-img--7" alt="">
+            <img src="Images/flash8.webp" class="haunt-img haunt-img--8" alt="">
+        </div>
+        <svg class="stack-img blink-layer" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+                <linearGradient id="lidShade" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#8d8b8a"/>
+                    <stop offset="45%" stop-color="#9c9a97"/>
+                    <stop offset="100%" stop-color="#6f6d6c"/>
+                </linearGradient>
+                <clipPath id="eyeClipL">
+                    <ellipse cx="611" cy="186" rx="50" ry="24" transform="rotate(-13.5 611 186)"/>
+                </clipPath>
+                <clipPath id="eyeClipR">
+                    <ellipse cx="804" cy="222" rx="38" ry="20" transform="rotate(32 804 222)"/>
+                </clipPath>
+            </defs>
+
+            <g class="eye eye--left" clip-path="url(#eyeClipL)">
+                <g class="lid">
+                    <rect x="558" y="156" width="106" height="60" fill="url(#lidShade)"/>
+                    <path class="crease" d="M566 171 Q611 164 656 171"/>
+                </g>
+                <path class="lash" transform="rotate(-13.5 611 186)" d="M566 186 Q611 198 656 186"/>
+            </g>
+
+            <g class="eye eye--right" clip-path="url(#eyeClipR)">
+                <g class="lid">
+                    <rect x="762" y="196" width="84" height="52" fill="url(#lidShade)"/>
+                    <path class="crease" d="M770 208 Q804 202 838 208"/>
+                </g>
+                <path class="lash" transform="rotate(32 804 222)" d="M768 222 Q804 232 840 222"/>
+            </g>
+        </svg>
+    </div>
+<script src="app.js"></script>
+</body>
+</html>

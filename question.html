@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kill The Rabbit — a Wonderland investigation. Dig through classified case files, recover evidence, and follow the cipher trail.">
+    <meta name="theme-color" content="#05060a">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2305060a'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-size='36' fill='%23ff3b3b'%3E?%3C/text%3E%3C/svg%3E">
+
+    <title>??? | Kill The Rabbit</title>
+    <link rel="stylesheet" href="styles-shared.css">
+    <link rel="stylesheet" href="styles-question.css">
+    <link rel="stylesheet" href="styles-trail.css">
+    <link rel="stylesheet" href="styles-terminal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" href="fonts/BlackDahlia.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="fonts/Nightbird.ttf" as="font" type="font/ttf" crossorigin>
+</head>
+<body class="question-locked" onload="updateLog()">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="ticker">
+            <div class="ticker__content">⚠ RABBIT SIGHTING REPORTED NEAR THE EASTERN HEDGE MAZE • ⚠ QUEEN'S GUARDS DEPLOYED TO ALL MAJOR PATHWAYS • ⚠ WITNESSES CLAIM THE RABBIT WAS SEEN CONSULTING AN UNMARKED POCKET WATCH • ⚠ CHESHIRE CAT LOCATION UNKNOWN • ⚠ LEVEL 5 WONDERLAND ALERT REMAINS ACTIVE • ⚠ RABBIT STILL AT LARGE • ⚠ REPORT ALL SUSPICIOUS TEA PARTIES TO THE ROYAL INVESTIGATION BUREAU • ⚠ THE HUNT CONTINUES • ⚠ RABBIT SIGHTING REPORTED NEAR THE EASTERN HEDGE MAZE • ⚠ QUEEN'S GUARDS DEPLOYED TO ALL MAJOR PATHWAYS • ⚠ WITNESSES CLAIM THE RABBIT WAS SEEN CONSULTING AN UNMARKED POCKET WATCH • ⚠ CHESHIRE CAT LOCATION UNKNOWN • ⚠ LEVEL 5 WONDERLAND ALERT REMAINS ACTIVE • ⚠ RABBIT STILL AT LARGE • ⚠ REPORT ALL SUSPICIOUS TEA PARTIES TO THE ROYAL INVESTIGATION BUREAU • ⚠ THE HUNT CONTINUES • </div>
+        </div>
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">KILL THE RABBIT</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="index.html">THE RABBIT</a></li>
+                <li><a href="alice.html">ALICE</a></li>
+                <li><a href="hatter.html">HATTER</a></li>
+                <li><a href="queen.html">QUEEN</a></li>
+                <li><a href="question.html" class="active">???</a></li>
+                <li><a class="btn" href="down.html">GO DOWN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Locked gate -->
+    <section class="question-lock-gate">
+        <p class="hero__eyebrow">UNANSWERED CHANNEL</p>
+        <h1>???</h1>
+        <p>This frequency is sealed.</p>
+        <p>Finish the cipher trail through Memorial → Mailbox → Diary → Queen, or push the case to Critical Event.</p>
+        <p style="margin-top:18px;">
+            <a href="index.html" class="button" style="display:inline-flex;padding:10px 18px;background:#e61c06;color:#fff;text-decoration:none;">
+                Return to Terminal
+            </a>
+        </p>
+    </section>
+
+    <!-- Unlocked transmission -->
+    <div class="question-unlocked-content">
+
+        <section class="breach-screen" id="breach-screen" aria-live="polite">
+            <div class="breach-screen__noise"></div>
+            <div class="breach-screen__scan"></div>
+            <div class="breach-screen__inner">
+                <p class="breach-screen__header">ROYAL INVESTIGATION BUREAU // CHANNEL ???</p>
+                <pre class="breach-log" id="breach-log"></pre>
+                <p class="breach-screen__status" id="breach-status">ESTABLISHING LINK…</p>
+            </div>
+        </section>
+
+        <div class="tear-bars" id="tear-bars" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <main class="transmission" id="transmission" hidden>
+            <div class="transmission__veil"></div>
+            <div class="transmission__content">
+                <p class="transmission__eyebrow">TRANSMISSION RECOVERED</p>
+                <div class="transmission__lyrics">
+                    <p>willy wonka wanna wish well when you're in the culprit</p>
+                    <p>stabbed his back 3 times before he lost it</p>
+                    <p>just directed my mind to better thoughts</p>
+                    <p>he softened up</p>
+                    <p>then to me he was lunch meat</p>
+                    <p>said you wanna get high? I wanna get up to see</p>
+                    <p>keep telling your lies, I wanna hear bluffs please</p>
+                    <p>i wanna see you shine... if "shine" meant:</p>
+                    <p class="transmission__quote">"faulted, torn apart, just look into my eyes, you will get exhausted"</p>
+                    <p>overheard your call, you said that he was acting funny</p>
+                    <p>really all along he was chasing active money when I looked</p>
+                    <p>funny how honey ain't sweet like sugar</p>
+                    <p>ain't shit sweet</p>
+                    <p class="transmission__last">but shit's sweet to a hook</p>
+                </div>
+                <button type="button" class="transmission__stamp" id="case-resolved-btn">CASE RESOLVED</button>
+            </div>
+        </main>
+
+        <div class="ending-reel" id="ending-reel" hidden aria-live="polite">
+            <img class="ending-reel__frame" id="ending-frame" alt="">
+            <div class="ending-credits" id="ending-credits" hidden>
+                <p class="ending-credits__title">The End</p>
+                <p class="ending-credits__hint">You may close this window.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

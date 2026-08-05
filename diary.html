@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kill The Rabbit — a Wonderland investigation. Dig through classified case files, recover evidence, and follow the cipher trail.">
+    <meta name="theme-color" content="#05060a">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2305060a'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-size='36' fill='%23ff3b3b'%3E?%3C/text%3E%3C/svg%3E">
+
+    <title>Diary | Kill The Rabbit</title>
+    <link rel="stylesheet" href="styles-shared.css">
+    <link rel="stylesheet" href="styles-diary.css">
+    <link rel="stylesheet" href="styles-trail.css">
+    <link rel="stylesheet" href="styles-terminal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="fonts/Jo_wrote_a_lovesong.woff" as="font" type="font/woff" crossorigin>
+
+</head>
+<body onload="updateLog()" data-category="memories">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="ticker">
+            <div class="ticker__content">⚠ RABBIT SIGHTING REPORTED NEAR THE EASTERN HEDGE MAZE • ⚠ QUEEN'S GUARDS DEPLOYED TO ALL MAJOR PATHWAYS • ⚠ WITNESSES CLAIM THE RABBIT WAS SEEN CONSULTING AN UNMARKED POCKET WATCH • ⚠ CHESHIRE CAT LOCATION UNKNOWN • ⚠ LEVEL 5 WONDERLAND ALERT REMAINS ACTIVE • ⚠ RABBIT STILL AT LARGE • ⚠ REPORT ALL SUSPICIOUS TEA PARTIES TO THE ROYAL INVESTIGATION BUREAU • ⚠ THE HUNT CONTINUES • ⚠ RABBIT SIGHTING REPORTED NEAR THE EASTERN HEDGE MAZE • ⚠ QUEEN'S GUARDS DEPLOYED TO ALL MAJOR PATHWAYS • ⚠ WITNESSES CLAIM THE RABBIT WAS SEEN CONSULTING AN UNMARKED POCKET WATCH • ⚠ CHESHIRE CAT LOCATION UNKNOWN • ⚠ LEVEL 5 WONDERLAND ALERT REMAINS ACTIVE • ⚠ RABBIT STILL AT LARGE • ⚠ REPORT ALL SUSPICIOUS TEA PARTIES TO THE ROYAL INVESTIGATION BUREAU • ⚠ THE HUNT CONTINUES • </div>
+        </div>
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">KILL THE RABBIT</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="index.html">THE RABBIT</a></li>
+                <li><a href="alice.html" class="active">ALICE</a></li>
+                <li><a href="hatter.html">HATTER</a></li>
+                <li><a href="queen.html">QUEEN</a></li>
+                <li><a href="question.html">???</a></li>
+                <li><a class="btn" href="down.html">GO DOWN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Diary -->
+    <div class="main">
+        <a href="alice.html" class="page-back">← BACK</a>
+        <div class="main__container">
+            <div class="wall-text"></div>
+            <div class="diary-frame">
+                <img id="diaryPage" src="Images/note1.webp" alt="Diary Page">
+                <button class="nav-btn prev" onclick="prevPage()">Previous</button>
+                <button class="nav-btn next" onclick="nextPage()">Next</button>
+            </div>
+
+            <aside class="trail-panel" data-trail="diary" data-ready="false">
+                <p class="trail-kicker">TORN FINAL ENTRY</p>
+                <h3>Sealed Diary Page</h3>
+                <p data-trail-hint>This entry is glued shut. Recover the mailbox voice first.</p>
+                <div data-trail-blocked>This entry is glued shut. Recover the mailbox voice first.</div>
+                <form class="trail-form" data-trail-form="diary">
+                    <input type="text" name="code" autocomplete="off" spellcheck="false" placeholder="ENTER NAME">
+                    <button type="submit">UNSEAL</button>
+                </form>
+                <p class="trail-feedback" data-trail-feedback></p>
+                <div class="trail-reveal" data-trail-reveal>
+                    <p>Ink bleeds through the glue. One line is underlined hard enough to tear the paper:</p>
+                    <p><em>"She never said kill him. She said she already had him cornered — and still needed a story."</em></p>
+                    <div class="next-clue">
+                        Queen clearance word:<br>
+                        <strong>CORNERED</strong>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+    const pages = [
+        "Images/note1.webp",
+        "Images/note2.webp",
+        "Images/note3.webp",
+        "Images/note4.webp",
+        "Images/note5.webp"
+    ];
+
+    let diaryIndex = 0;
+
+    function showPage(index) {
+        document.getElementById("diaryPage").src = pages[index];
+    }
+
+    function nextPage() {
+        if (diaryIndex < pages.length - 1) {
+            diaryIndex++;
+            showPage(diaryIndex);
+        }
+    }
+
+    function prevPage() {
+        if (diaryIndex > 0) {
+            diaryIndex--;
+            showPage(diaryIndex);
+        }
+    }
+    </script>
+    <script>
+    const wall = document.querySelector(".wall-text");
+    const text = "rabbi t";
+    const scribbleCount = 60; // number of repeated texts
+
+    for (let i = 0; i < scribbleCount; i++) {
+        const span = document.createElement("span");
+        span.innerText = text;
+
+        // Random position
+        span.style.top = Math.random() * 100 + "%";
+        span.style.left = Math.random() * 100 + "%";
+
+        span.style.setProperty('--rotation', `${Math.random() * 360}deg`);
+
+        // Random font size
+        span.style.fontSize = (Math.random() * 50 + 20) + "px";
+
+        // Random rotation
+        span.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+        // Random opacity for subtlety
+        span.style.opacity = Math.random() * 0.2 + 0.05;
+
+        wall.appendChild(span);
+    }
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

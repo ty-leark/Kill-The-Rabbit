@@ -1,0 +1,265 @@
+/* ==========================================================
+   MEMORIES STACK — layout only
+   ========================================================== */
+
+body {
+    background: var(--bg);
+    overflow-x: hidden;
+}
+
+.stack-container {
+    position: relative;
+    width: calc(100vw - 340px);
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    background: var(--bg);
+}
+
+@media (max-width: 900px) {
+    .stack-container {
+        width: 100vw;
+    }
+}
+
+.page-back {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    color: var(--redBright);
+    text-decoration: none;
+    font-family: Orbitron, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.55);
+    transition: 0.25s ease;
+}
+
+.page-back:hover {
+    background: var(--red);
+    color: #000;
+    border-color: var(--redBright);
+}
+
+.stack-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img1 { z-index: 1; opacity: 1; }
+
+.haunt-stack {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.haunt-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    mix-blend-mode: soft-light;
+}
+
+.haunt-img--0 {
+    animation: hauntPulseA 11s ease-in-out 0.4s infinite;
+    mix-blend-mode: soft-light;
+}
+.haunt-img--1 {
+    animation: hauntPulseB 13s ease-in-out 1.8s infinite;
+    mix-blend-mode: overlay;
+}
+.haunt-img--2 {
+    animation: hauntPulseA 15s ease-in-out 3.2s infinite;
+}
+.haunt-img--3 {
+    animation: hauntPulseC 12s ease-in-out 5.1s infinite;
+    mix-blend-mode: screen;
+}
+.haunt-img--4 {
+    animation: hauntPulseB 14s ease-in-out 0.9s infinite;
+}
+.haunt-img--5 {
+    animation: hauntPulseA 16s ease-in-out 4.4s infinite;
+    mix-blend-mode: overlay;
+}
+.haunt-img--6 {
+    animation: hauntPulseC 10s ease-in-out 2.6s infinite;
+}
+.haunt-img--7 {
+    animation: hauntPulseB 17s ease-in-out 6.0s infinite;
+    mix-blend-mode: soft-light;
+}
+.haunt-img--8 {
+    animation: hauntPulseC 12.5s ease-in-out 7.2s infinite;
+    mix-blend-mode: screen;
+}
+
+@keyframes hauntPulseA {
+    0%,
+    12%,
+    100% { opacity: 0; }
+    18% { opacity: 0.42; }
+    28% { opacity: 0.18; }
+    36% { opacity: 0.55; }
+    48% { opacity: 0; }
+}
+
+@keyframes hauntPulseB {
+    0%,
+    20%,
+    100% { opacity: 0; }
+    27% { opacity: 0.35; }
+    34% { opacity: 0.12; }
+    41% { opacity: 0.48; }
+    55% { opacity: 0; }
+}
+
+@keyframes hauntPulseC {
+    0%,
+    30%,
+    100% { opacity: 0; }
+    38% { opacity: 0.28; }
+    46% { opacity: 0.5; }
+    58% { opacity: 0.1; }
+    66% { opacity: 0; }
+}
+
+.blink-layer {
+    z-index: 6;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.eye .lid {
+    transform-box: view-box;
+}
+
+.eye--left .lid {
+    transform-origin: 611px 162px;
+    transform: rotate(-13.5deg) scaleY(0);
+    animation: rabbitBlinkLeft 5s cubic-bezier(0.55, 0.05, 0.35, 1) infinite;
+}
+
+.eye--right .lid {
+    transform-origin: 804px 202px;
+    transform: rotate(32deg) scaleY(0);
+    animation: rabbitBlinkRight 5s cubic-bezier(0.55, 0.05, 0.35, 1) infinite;
+    animation-delay: 0.035s;
+}
+
+.crease {
+    fill: none;
+    stroke: rgba(35, 33, 32, 0.45);
+    stroke-width: 2.4;
+    stroke-linecap: round;
+}
+
+.lash {
+    fill: none;
+    stroke: #171513;
+    stroke-width: 3.4;
+    stroke-linecap: round;
+    opacity: 0;
+    animation: lashFlash 5s cubic-bezier(0.55, 0.05, 0.35, 1) infinite;
+}
+
+.eye--right .lash {
+    animation-delay: 0.035s;
+}
+
+@keyframes rabbitBlinkLeft {
+    0%,
+    2% {
+        transform: rotate(-13.5deg) scaleY(0);
+    }
+    4.2% {
+        transform: rotate(-13.5deg) scaleY(1);
+    }
+    5.8% {
+        transform: rotate(-13.5deg) scaleY(0);
+    }
+    7.2% {
+        transform: rotate(-13.5deg) scaleY(0);
+    }
+    9.4% {
+        transform: rotate(-13.5deg) scaleY(1);
+    }
+    11%,
+    100% {
+        transform: rotate(-13.5deg) scaleY(0);
+    }
+}
+
+@keyframes rabbitBlinkRight {
+    0%,
+    2% {
+        transform: rotate(32deg) scaleY(0);
+    }
+    4.2% {
+        transform: rotate(32deg) scaleY(1);
+    }
+    5.8% {
+        transform: rotate(32deg) scaleY(0);
+    }
+    7.2% {
+        transform: rotate(32deg) scaleY(0);
+    }
+    9.4% {
+        transform: rotate(32deg) scaleY(1);
+    }
+    11%,
+    100% {
+        transform: rotate(32deg) scaleY(0);
+    }
+}
+
+@keyframes lashFlash {
+    0%,
+    3.6% {
+        opacity: 0;
+    }
+    4.1%,
+    4.7% {
+        opacity: 1;
+    }
+    5.4%,
+    8.8% {
+        opacity: 0;
+    }
+    9.3%,
+    9.9% {
+        opacity: 1;
+    }
+    10.6%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .eye .lid,
+    .eye .lash,
+    .haunt-img {
+        animation: none;
+    }
+
+    .haunt-img {
+        opacity: 0;
+    }
+}

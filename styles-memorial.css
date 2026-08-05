@@ -1,0 +1,61 @@
+/* ==========================================================
+   MEMORIAL — layout only (chrome in styles-shared.css)
+   ========================================================== */
+
+body {
+    background: var(--bg);
+}
+
+.main {
+    background: var(--bg2);
+    min-height: 100vh;
+    display: block;
+    padding: 50px 0 80px;
+}
+
+.main__container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.page-back {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    color: var(--redBright);
+    text-decoration: none;
+    font-family: Orbitron, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    background: transparent;
+    transition: 0.25s ease;
+}
+
+.page-back:hover {
+    background: var(--red);
+    color: #000;
+    border-color: var(--redBright);
+}
+
+.main__img--container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+@media screen and (max-width: 1100px) {
+    .main__container {
+        width: 95%;
+        padding: 0 20px;
+    }
+}

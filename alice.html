@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kill The Rabbit — a Wonderland investigation. Dig through classified case files, recover evidence, and follow the cipher trail.">
+    <meta name="theme-color" content="#05060a">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2305060a'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-size='36' fill='%23ff3b3b'%3E?%3C/text%3E%3C/svg%3E">
+
+    <title>Alice | Kill The Rabbit</title>
+
+    <meta name="theme-color" content="#060913">
+
+    <link rel="stylesheet" href="styles-shared.css">
+    <link rel="stylesheet" href="styles-A.css">
+    <link rel="stylesheet" href="styles-terminal.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="alice-page" onload="updateLog()">
+
+<!-- ==========================================
+BACKGROUND
+========================================== -->
+
+<div class="noise"></div>
+<div class="vignette"></div>
+<div class="energy-grid"></div>
+<div class="particles"></div>
+
+<!-- ==========================================
+NAVIGATION
+========================================== -->
+
+    <nav class="navbar">
+        <div class="ticker">
+            <div class="ticker__content">⚠ RABBIT SIGHTING REPORTED NEAR THE EASTERN HEDGE MAZE • ⚠ QUEEN'S GUARDS DEPLOYED TO ALL MAJOR PATHWAYS • ⚠ WITNESSES CLAIM THE RABBIT WAS SEEN CONSULTING AN UNMARKED POCKET WATCH • ⚠ CHESHIRE CAT LOCATION UNKNOWN • ⚠ LEVEL 5 WONDERLAND ALERT REMAINS ACTIVE • ⚠ RABBIT STILL AT LARGE • ⚠ REPORT ALL SUSPICIOUS TEA PARTIES TO THE ROYAL INVESTIGATION BUREAU • ⚠ THE HUNT CONTINUES • ⚠ RABBIT SIGHTING REPORTED NEAR THE EASTERN HEDGE MAZE • ⚠ QUEEN'S GUARDS DEPLOYED TO ALL MAJOR PATHWAYS • ⚠ WITNESSES CLAIM THE RABBIT WAS SEEN CONSULTING AN UNMARKED POCKET WATCH • ⚠ CHESHIRE CAT LOCATION UNKNOWN • ⚠ LEVEL 5 WONDERLAND ALERT REMAINS ACTIVE • ⚠ RABBIT STILL AT LARGE • ⚠ REPORT ALL SUSPICIOUS TEA PARTIES TO THE ROYAL INVESTIGATION BUREAU • ⚠ THE HUNT CONTINUES • </div>
+        </div>
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">KILL THE RABBIT</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="index.html">THE RABBIT</a></li>
+                <li><a href="alice.html" class="active">ALICE</a></li>
+                <li><a href="hatter.html">HATTER</a></li>
+                <li><a href="queen.html">QUEEN</a></li>
+                <li><a href="question.html">???</a></li>
+                <li><a class="btn" href="down.html">GO DOWN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- ==========================================
+HERO
+========================================== -->
+
+<header class="hero hero--alice">
+
+    <div class="hero__gradient"></div>
+    <div class="hero__fog"></div>
+
+    <div class="hero__container">
+
+        <div class="hero__content reveal">
+
+            <div class="hero__eyebrow">SUBJECT FILE: ALICE</div>
+
+            <h1>Alice</h1>
+
+            <div class="hero__line"></div>
+
+            <p class="hero__quote">"Alice... why did it have to come to this?"</p>
+
+            <span class="hero__author">— The Rabbit</span>
+
+            <p class="hero__description">
+                Once an ally. Now one of Wonderland's greatest unknowns.
+                Every recovered memory uncovers another lie.
+                Every answer creates another question.
+            </p>
+
+            <div class="hero__buttons">
+                <a href="down.html" class="primary-btn">ENTER BURROW</a>
+                <a href="#profile" class="secondary-btn">VIEW DOSSIER</a>
+            </div>
+
+        </div>
+
+        <div class="hero__visual parallax">
+
+            <div class="portrait-frame">
+
+                <div class="portrait-glow"></div>
+
+                <img
+                    src="Images/Alice.1.jpeg"
+                    alt="Alice"
+                    class="hero__portrait">
+
+                <img
+                    src="Images/starz.webp"
+                    alt=""
+                    class="hero__overlay">
+
+                <div class="scan-lines"></div>
+
+                <div class="frame-corners"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ==========================================
+PROFILE
+========================================== -->
+
+<section id="profile" class="profile reveal">
+
+    <div class="section-heading">
+
+        <span>CLASSIFIED RECORD</span>
+
+        <h2>
+
+            Psychological Profile
+
+        </h2>
+
+    </div>
+
+    <div class="profile-grid">
+
+        <article class="profile-card">
+
+            <div class="card-top">
+
+                STATUS
+
+            </div>
+
+            <h3>
+
+                UNKNOWN
+
+            </h3>
+
+            <p>
+
+                Intelligence reports conflict regarding Alice's
+                allegiance. Surveillance footage suggests repeated
+                encounters with the White Rabbit immediately before
+                major disturbances throughout Wonderland.
+
+            </p>
+
+        </article>
+
+        <article class="profile-card">
+
+            <div class="card-top">
+
+                LAST KNOWN MEMORY
+
+            </div>
+
+            <h3>
+
+                Fractured Timeline
+
+            </h3>
+
+            <p>
+                Intelligence recovered from abandoned diary pages
+                indicates Alice's recollection of Wonderland has become
+                increasingly fragmented. Events repeat, disappear,
+                and contradict earlier witness testimony.
+
+            </p>
+
+        </article>
+
+        <article class="profile-card">
+
+            <div class="card-top">
+
+                THREAT LEVEL
+
+            </div>
+
+            <h3>
+
+                ELEVATED
+
+            </h3>
+
+            <p>
+
+                Although no direct attacks have been confirmed,
+                every confirmed encounter with Alice precedes a major
+                distortion somewhere inside Wonderland's borders.
+
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+MEMORY ARCHIVE
+========================================== -->
+
+<section class="archive">
+
+    <div class="section-heading reveal">
+
+        <span>RECOVERED EVIDENCE</span>
+
+        <h2>
+
+            Memory Archive
+
+        </h2>
+
+    </div>
+
+    <div class="archive-grid">
+
+        <article class="memory-card reveal">
+
+            <div class="memory-image">
+
+                <img
+                    src="Images/Alice.2.jpg"
+                    alt="Old Friend">
+
+            </div>
+
+            <div class="memory-content">
+
+                <span class="memory-tag">
+
+                    FILE 01
+
+                </span>
+
+                <h3>
+
+                    An Old Friend
+
+                </h3>
+
+                <p>
+
+                    Audio recovered from an abandoned mailbox.
+                    Voices overlap across multiple timelines.
+
+                </p>
+
+                <a href="mailbox.html"
+                   class="card-button">
+
+                    PLAY RECORDING
+
+                </a>
+
+            </div>
+
+        </article>
+
+        <article class="memory-card reveal">
+
+            <div class="memory-image">
+
+                <img
+                    src="Images/pic4.jpg"
+                    alt="One Last Exchange">
+
+            </div>
+
+            <div class="memory-content">
+
+                <span class="memory-tag">
+
+                    FILE 02
+
+                </span>
+
+                <h3>
+
+                    One Last Exchange
+
+                </h3>
+
+                <p>
+
+                    A fragmented conversation recovered from damaged
+                    records. Every replay reveals another missing
+                    sentence.
+
+                </p>
+
+                <a href="diary.html"
+                   class="card-button">
+
+                    UNLOCK MEMORY
+
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+TIMELINE
+========================================== -->
+
+<section class="timeline">
+
+    <div class="section-heading reveal">
+
+        <span>EVENT LOG</span>
+
+        <h2>
+
+            Wonderland Timeline
+
+        </h2>
+
+    </div>
+
+    <div class="timeline-container">
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <h3>
+
+                    Initial Contact
+
+                </h3>
+
+                <p>
+
+                    Alice enters Wonderland.
+                    Reality remains stable.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <h3>
+
+                    Rabbit Disappears
+
+                </h3>
+
+                <p>
+
+                    Royal intelligence loses visual confirmation.
+                    Queen initiates emergency investigation.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <h3>
+
+                    Memory Collapse
+
+                </h3>
+
+                <p>
+
+                    Alice begins reporting contradictory events.
+                    Witnesses provide incompatible testimony.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <h3>
+
+                    Present Day
+
+                </h3>
+
+                <p>
+
+                    Investigation remains active.
+                    Alice's true intentions remain unknown.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+FOOTER
+========================================== -->
+
+<footer class="footer">
+
+    <div class="footer__container">
+
+        <div class="footer__brand">
+
+            <h2>
+
+                KILL THE RABBIT
+
+            </h2>
+
+            <p>
+
+                Wonderland Intelligence Division
+
+            </p>
+
+        </div>
+
+        <div class="footer__links">
+
+            <a href="index.html">Rabbit</a>
+
+            <a href="alice.html">Alice</a>
+
+            <a href="hatter.html">Hatter</a>
+
+            <a href="queen.html">Queen</a>
+
+            <a href="question.html">Unknown</a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>

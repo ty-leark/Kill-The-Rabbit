@@ -1,0 +1,235 @@
+/* ==========================================================
+   KILL THE RABBIT — INDEX PAGE
+   Terminal styles live in styles-terminal.css (via shared)
+   ========================================================== */
+
+body {
+    padding-right: 0;
+}
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 600;
+}
+
+.hero__grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 48px;
+    padding: 80px 42px;
+    align-items: center;
+    width: 100%;
+}
+
+.hero__content h1 {
+    font-family: Orbitron, sans-serif;
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    letter-spacing: 4px;
+    color: var(--redBright);
+    line-height: 1.05;
+}
+
+.hero__content .quote {
+    margin-top: 22px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 36ch;
+}
+
+.cta {
+    display: inline-flex;
+    margin-top: 36px;
+    padding: 12px 22px;
+    border-radius: 8px;
+    border: 1px solid var(--red);
+    background: transparent;
+    color: var(--redBright);
+    text-decoration: none;
+    font-family: Orbitron, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    transition: 0.25s ease;
+}
+
+.cta:hover {
+    background: var(--red);
+    color: #000;
+}
+
+.hero__visual {
+    position: relative;
+    z-index: 1;
+    background: #0c0e14;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow: var(--shadow);
+}
+
+.hero__visual .primary {
+    width: 108%;
+    max-width: none;
+    display: block;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    background: #0c0e14;
+}
+
+.hero__visual .overlay {
+    position: absolute;
+    right: -8%;
+    bottom: -6%;
+    width: 48%;
+    opacity: 0.85;
+    filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.55));
+    pointer-events: none;
+}
+
+/* ==========================================================
+   EVIDENCE SECTION
+   ========================================================== */
+
+.section.evidence {
+    padding: 100px 30px;
+    position: relative;
+    z-index: 600;
+}
+
+.section.evidence .section__title {
+    width: min(1100px, 92%);
+    margin: 0 auto 40px;
+    font-family: Orbitron, sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+}
+
+.archive-grid {
+    width: min(1100px, 92%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.memory-card {
+    display: flex;
+    flex-direction: column;
+    background: #0c0e14;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    isolation: isolate;
+    transition:
+        transform 0.45s var(--ease),
+        border-color 0.45s var(--ease),
+        box-shadow 0.45s var(--ease);
+}
+
+.memory-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(177, 0, 26, 0.4);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.memory-image {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #05060a;
+}
+
+.memory-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s var(--ease);
+}
+
+.memory-card:hover .memory-image img {
+    transform: scale(1.06);
+}
+
+.memory-content {
+    padding: 22px 24px 26px;
+    position: relative;
+    z-index: 1;
+    background: #0c0e14;
+}
+
+.memory-tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-family: Orbitron, sans-serif;
+}
+
+.memory-content h3 {
+    font-family: Orbitron, sans-serif;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 1.15rem;
+}
+
+.memory-content p {
+    color: var(--muted);
+    line-height: 1.65;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.card-button {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--redBright);
+    text-decoration: none;
+    font-family: Orbitron, sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 0.72rem;
+}
+
+.card-button:hover {
+    color: var(--gold);
+}
+
+@media (max-width: 900px) {
+    .hero__grid {
+        grid-template-columns: 1fr;
+        padding: 48px 20px;
+    }
+
+    .hero__visual .overlay {
+        width: 40%;
+        right: 4%;
+        bottom: -4%;
+    }
+
+    .section.evidence {
+        padding: 60px 20px 80px;
+    }
+
+    .archive-grid {
+        grid-template-columns: 1fr;
+    }
+}

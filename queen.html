@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kill The Rabbit — a Wonderland investigation. Dig through classified case files, recover evidence, and follow the cipher trail.">
+    <meta name="theme-color" content="#05060a">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2305060a'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-size='36' fill='%23ff3b3b'%3E?%3C/text%3E%3C/svg%3E">
+
+    <title>The Queen | Kill The Rabbit</title>
+    <link rel="stylesheet" href="styles-shared.css">
+    <link rel="stylesheet" href="styles-C.css">
+    <link rel="stylesheet" href="styles-trail.css">
+    <link rel="stylesheet" href="styles-terminal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body onload="updateLog()">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="ticker">
+            <div class="ticker__content">⚠ RABBIT SIGHTING REPORTED NEAR THE EASTERN HEDGE MAZE • ⚠ QUEEN'S GUARDS DEPLOYED TO ALL MAJOR PATHWAYS • ⚠ WITNESSES CLAIM THE RABBIT WAS SEEN CONSULTING AN UNMARKED POCKET WATCH • ⚠ CHESHIRE CAT LOCATION UNKNOWN • ⚠ LEVEL 5 WONDERLAND ALERT REMAINS ACTIVE • ⚠ RABBIT STILL AT LARGE • ⚠ REPORT ALL SUSPICIOUS TEA PARTIES TO THE ROYAL INVESTIGATION BUREAU • ⚠ THE HUNT CONTINUES • ⚠ RABBIT SIGHTING REPORTED NEAR THE EASTERN HEDGE MAZE • ⚠ QUEEN'S GUARDS DEPLOYED TO ALL MAJOR PATHWAYS • ⚠ WITNESSES CLAIM THE RABBIT WAS SEEN CONSULTING AN UNMARKED POCKET WATCH • ⚠ CHESHIRE CAT LOCATION UNKNOWN • ⚠ LEVEL 5 WONDERLAND ALERT REMAINS ACTIVE • ⚠ RABBIT STILL AT LARGE • ⚠ REPORT ALL SUSPICIOUS TEA PARTIES TO THE ROYAL INVESTIGATION BUREAU • ⚠ THE HUNT CONTINUES • </div>
+        </div>
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">KILL THE RABBIT</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="index.html">THE RABBIT</a></li>
+                <li><a href="alice.html">ALICE</a></li>
+                <li><a href="hatter.html">HATTER</a></li>
+                <li><a href="queen.html" class="active">QUEEN</a></li>
+                <li><a href="question.html">???</a></li>
+                <li><a class="btn" href="down.html">GO DOWN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="main">
+        <div class="main__container">
+            <div class="hearts">
+                <span class="heart green">♥</span>
+                <span class="heart blue">♥</span>
+                <span class="heart">♥</span>
+                <span class="heart yellow">♥</span>
+                <span class="heart green">♥</span>
+                <span class="heart blue">♥</span>
+                <span class="heart green">♥</span>
+                <span class="heart green">♥</span>
+                <span class="heart yellow">♥</span>
+                <span class="heart">♥</span>
+                <span class="heart yellow">♥</span>
+                <span class="heart green">♥</span>
+                <span class="heart blue">♥</span>
+            </div>
+            <div class="main__content">
+                <p class="hero__eyebrow">SUBJECT FILE: QUEEN OF HEARTS</p>
+                <h1>The Queen</h1>
+                <div class="queen-quote-glass">
+                    <p>"Take his pawns, but the Queen has you cornered."<br>
+                    -His Majesty</p>
+                </div>
+                <a href="down.html" class="main__btn">
+                    <span>Go In Hole</span>
+                </a>
+            </div>
+            <div class="main__img--container">
+                <img src="Images/Queen.webp" alt="The Queen of Hearts" id="main__img">
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services">
+        <h1>Last Attempt</h1>
+        <div class="services__container">
+            <div class="services__card">
+                <h2>Magic Nut</h2>
+                <p>Ingested</p>
+                <a class="services-link" href="memories.html">Muddy Memories</a>
+            </div>
+            <div class="services__card">
+                <h2>"Man down?!"</h2>
+                <p>-xoxo</p>
+                <a class="services-link" href="memorial.html">Memorial Service</a>
+            </div>
+        </div>
+
+        <aside class="trail-panel" data-trail="queen" data-ready="false">
+            <p class="trail-kicker">ROYAL INTEL: CONTRADICTION</p>
+            <h3>Sealed Decree Fragment</h3>
+            <p data-trail-hint>Royal intel remains redacted. Finish the diary trail first.</p>
+            <div data-trail-blocked>Royal intel remains redacted. Finish the diary trail first.</div>
+            <form class="trail-form" data-trail-form="queen">
+                <input type="text" name="code" autocomplete="off" spellcheck="false" placeholder="ENTER CLEARANCE">
+                <button type="submit">OVERRIDE</button>
+            </form>
+            <p class="trail-feedback" data-trail-feedback></p>
+            <div class="trail-reveal" data-trail-reveal>
+                <p>The decree rewrites itself mid-sentence. The hunt order was issued after containment was already confirmed.</p>
+                <p><em>"Kill the Rabbit" was theater. Someone needed the Rabbit chased — not caught.</em></p>
+                <div class="next-clue">
+                    The unanswered channel is stirring.<br>
+                    Open <strong>???</strong> — sealed until this contradiction is logged,<br>
+                    or until the case reaches <strong>CRITICAL EVENT</strong>.
+                </div>
+            </div>
+        </aside>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
